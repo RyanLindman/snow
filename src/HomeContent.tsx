@@ -1,14 +1,42 @@
-import { Container, Grid } from '@mui/material'
+import {
+  Container,
+  Grid,
+  Paper,
+  ThemeProvider,
+  createTheme,
+} from '@mui/material'
 import './homeContent.css'
 
 type HomeContentProps = {}
 
 const HomeContent: React.FC<HomeContentProps> = () => {
+  const paperTheme = createTheme({
+    components: {
+      MuiPaper: {
+        styleOverrides: {
+          root: {
+            
+          },
+        },
+      },
+    },
+  })
+
   return (
     <>
-      <Container>
-        <Grid></Grid>
-      </Container>
+      <ThemeProvider theme={paperTheme}>
+        <Container>
+          <Grid container>
+            <Paper elevation={3}>
+
+            </Paper>
+
+            <Paper elevation={3}>
+
+            </Paper>
+          </Grid>
+        </Container>
+      </ThemeProvider>
     </>
   )
 }

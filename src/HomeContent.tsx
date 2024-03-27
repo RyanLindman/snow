@@ -3,6 +3,7 @@ import {
   Grid,
   Paper,
   ThemeProvider,
+  Typography,
   createTheme,
 } from '@mui/material'
 import './homeContent.css'
@@ -42,10 +43,27 @@ const HomeContent: React.FC<HomeContentProps> = () => {
                   height: 340,
                   width: 600,
                 }}
+                elevation={8}
               />
             </Grid>
             <Grid item xs={6}>
-              <Paper sx={{ height: 340 }}>cadadad sfsefsefsf</Paper>
+              <Paper
+                sx={{
+                  textAlign: 'center',
+                  height: 340,
+                  bgcolor: 'rgba(252, 252, 252, 0.3)',
+                  padding: 6,
+                }}
+                elevation={8}
+              >
+                <Typography variant="h4" color={'white'} fontWeight={700}>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  necessitatibus vero <br />
+                  <br />
+                  eos aut rerum? Fuga a commodi cupiditate Voluptas ab officiis
+                  tempora iusto minima eligendi. eum?
+                </Typography>
+              </Paper>
             </Grid>
           </Grid>
         </Container>

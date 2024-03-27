@@ -14,9 +14,7 @@ const HomeContent: React.FC<HomeContentProps> = () => {
     components: {
       MuiPaper: {
         styleOverrides: {
-          root: {
-            
-          },
+          root: {},
         },
       },
     },
@@ -25,15 +23,30 @@ const HomeContent: React.FC<HomeContentProps> = () => {
   return (
     <>
       <ThemeProvider theme={paperTheme}>
-        <Container>
-          <Grid container>
-            <Paper elevation={3}>
-
-            </Paper>
-
-            <Paper elevation={3}>
-
-            </Paper>
+        <Container
+          maxWidth={false}
+          sx={{
+            background:
+              'linear-gradient(90deg, rgba(57,92,130,1) 0%, rgba(15,54,97,1) 100%)',
+          }}
+        >
+          <Grid container padding={10}>
+            <Grid item xs={6}>
+              <Paper
+                sx={{
+                  padding: 2,
+                  backgroundImage: 'url(src/assets/Snorojning-1200x936.jpg)',
+                  backgroundRepeat: 'no-repeat',
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                  height: 340,
+                  width: 600,
+                }}
+              />
+            </Grid>
+            <Grid item xs={6}>
+              <Paper sx={{ height: 340 }}>cadadad sfsefsefsf</Paper>
+            </Grid>
           </Grid>
         </Container>
       </ThemeProvider>

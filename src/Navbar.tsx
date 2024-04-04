@@ -51,6 +51,7 @@ const Navbar: React.FC<Props> = (props: Props) => {
                       style={{
                         textDecoration: 'none',
                         color: 'white',
+                        
                       }}
                       to={item.path || ''}
                     >

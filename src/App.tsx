@@ -8,11 +8,15 @@ function App() {
 
   return (
     <>
-      <Navbar children={undefined} items={navOpts} />
-      <Header />
-      <HomeContent />
-      
+    
+    <Navbar children={undefined} items={navOpts} />
+    <Header />
+    <HomeContent />
+  
     </>
+      
+      
+    
   );
 }
 

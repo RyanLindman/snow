@@ -11,11 +11,31 @@ import './homeContent.css'
 type HomeContentProps = {}
 
 const HomeContent: React.FC<HomeContentProps> = () => {
-  const paperTheme = createTheme({
+  const theme = createTheme({
     components: {
       MuiPaper: {
         styleOverrides: {
-          root: {},
+          elevation9: {
+            textAlign: 'center',
+            alignContent: 'center',
+            height: 340,
+            backgroundColor: 'rgba(252, 252, 252, 0.3)',
+            padding: '20px',
+          },
+          elevation8: {
+            backgroundRepeat: 'no-repeat',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+          },
+        },
+      },
+      MuiTypography: {
+        styleOverrides: {
+          root: {
+            color: 'white',
+            fontFamily: 'Nunito sans',
+            letterSpacing: 0.5,
+          },
         },
       },
     },
@@ -23,7 +43,7 @@ const HomeContent: React.FC<HomeContentProps> = () => {
 
   return (
     <>
-      <ThemeProvider theme={paperTheme}>
+      <ThemeProvider theme={theme}>
         <Container
           maxWidth={false}
           sx={{
@@ -37,9 +57,6 @@ const HomeContent: React.FC<HomeContentProps> = () => {
                 sx={{
                   padding: 2,
                   backgroundImage: 'url(src/assets/Snorojning-1200x936.jpg)',
-                  backgroundRepeat: 'no-repeat',
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center',
                   height: 340,
                   width: 600,
                 }}
@@ -47,25 +64,27 @@ const HomeContent: React.FC<HomeContentProps> = () => {
               />
             </Grid>
             <Grid item xs={6}>
-              <Paper
-                sx={{
-                  textAlign: 'center',
-                  height: 340,
-                  bgcolor: 'rgba(252, 252, 252, 0.3)',
-                  padding: 6,
-                }}
-                elevation={8}
-              >
-                <Typography variant="h4" color={'white'} fontWeight={700}>
+              <Paper elevation={9}>
+                <Typography variant="h4" fontWeight={700}>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  necessitatibus vero <br />
+                  Necessitatibus vero. <br />
                   <br />
-                  eos aut rerum? Fuga a commodi cupiditate Voluptas ab officiis
-                  tempora iusto minima eligendi. eum?
+                </Typography>
+                <Typography variant="h5">
+                  Eos aut rerum? Fuga a commodi cupiditate Voluptas ab officiis
+                  tempora iusto minima eligendi. Eum?
+                </Typography>
+                <br />
+                <Typography variant="h5">
+                  Eos aut rerum? Fuga a commodi cupiditate Voluptas ab officiis!
                 </Typography>
               </Paper>
             </Grid>
           </Grid>
+          <hr />
+          <Typography variant="h1" padding={10}>
+            Vi hjälper privata kunder såväl som offentlig sektor
+          </Typography>
         </Container>
       </ThemeProvider>
     </>

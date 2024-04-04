@@ -1,12 +1,17 @@
 type FooterProps = {}
 
 const Footer: React.FC<FooterProps> = () => {
-  return <>
+  return (<>
   
 
 
 
+
+
+
+
   </>
+  )
 }
 
 export default Footer

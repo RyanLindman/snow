@@ -1,4 +1,5 @@
 import {
+  Box,
   Container,
   Grid,
   Paper,
@@ -7,6 +8,7 @@ import {
   createTheme,
 } from '@mui/material'
 import './homeContent.css'
+import Breadcrumbs from './Breadcrumbs'
 
 type HomeContentProps = {}
 
@@ -19,7 +21,7 @@ const HomeContent: React.FC<HomeContentProps> = () => {
             textAlign: 'center',
             alignContent: 'center',
             height: 340,
-            backgroundColor: 'rgba(252, 252, 252, 0.3)',
+            backgroundColor: '#ccc3',
             padding: '20px',
           },
           elevation8: {
@@ -45,11 +47,14 @@ const HomeContent: React.FC<HomeContentProps> = () => {
     <>
       <ThemeProvider theme={theme}>
         <Container
+          
           maxWidth={false}
           sx={{
             background:
               'linear-gradient(90deg, rgba(57,92,130,1) 0%, rgba(15,54,97,1) 100%)',
+              
           }}
+        
         >
           <Grid container padding={10}>
             <Grid item xs={6}>
@@ -85,6 +90,10 @@ const HomeContent: React.FC<HomeContentProps> = () => {
           <Typography variant="h1" padding={10}>
             Vi hjälper privata kunder såväl som offentlig sektor
           </Typography>
+
+          <Box sx={{ width: '100%', height: '200px', background: '#ccc2', borderTopLeftRadius: "10px", borderTopRightRadius: "10px", display: "flex", justifyContent: "center"}}>
+             <Breadcrumbs />
+          </Box>
         </Container>
       </ThemeProvider>
     </>

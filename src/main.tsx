@@ -1,13 +1,21 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App.tsx'
+import Home from './views/home/Home.tsx'
 import './index.css'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
+import OurServices from './views/services/OurServices.tsx'
+
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />,
+    element: <Home />,
+  },
+  {
+    path: '/vara-tjanster',
+    element: <OurServices />,
+  
+    
   }
 ])
 

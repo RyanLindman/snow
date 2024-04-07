@@ -8,7 +8,11 @@ import {
   createTheme,
 } from '@mui/material'
 import './homeContent.css'
-import Breadcrumbs from './Breadcrumbs'
+import Breadcrumbs from '../../Breadcrumbs'
+import InstagramIcon from '@mui/icons-material/Instagram'
+import FacebookIcon from '@mui/icons-material/Facebook'
+import MailOutlineIcon from '@mui/icons-material/MailOutline'
+import PhoneIcon from '@mui/icons-material/Phone'
 
 type HomeContentProps = {}
 
@@ -47,14 +51,11 @@ const HomeContent: React.FC<HomeContentProps> = () => {
     <>
       <ThemeProvider theme={theme}>
         <Container
-          
           maxWidth={false}
           sx={{
             background:
               'linear-gradient(90deg, rgba(57,92,130,1) 0%, rgba(15,54,97,1) 100%)',
-              
           }}
-        
         >
           <Grid container padding={10}>
             <Grid item xs={6}>
@@ -91,8 +92,41 @@ const HomeContent: React.FC<HomeContentProps> = () => {
             Vi hjälper privata kunder såväl som offentlig sektor
           </Typography>
 
-          <Box sx={{ width: '100%', height: '200px', background: '#ccc2', borderTopLeftRadius: "10px", borderTopRightRadius: "10px", display: "flex", justifyContent: "center"}}>
-             <Breadcrumbs />
+          <Box
+            sx={{
+              width: '100%',
+              height: '200px',
+              background: '#ccc2',
+              borderTopLeftRadius: '10px',
+              borderTopRightRadius: '10px',
+              display: 'flex',
+              justifyContent: 'center',
+              flexDirection: 'column',
+              alignItems: 'center',
+              gap: '30px',
+            }}
+          >
+            <Box>
+              <Breadcrumbs />
+            </Box>
+            <Box sx={{ display: 'flex', gap: '15px', color: '#ccc' }}>
+              <a
+                href="https://instagram.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <InstagramIcon />
+              </a>
+              <a href='https://facebook.com' target='_blank' rel='noopener noreferrer'>
+                <FacebookIcon />
+              </a>
+              <a>
+                <MailOutlineIcon />
+              </a>
+              <a>
+                <PhoneIcon />
+              </a>
+            </Box>
           </Box>
         </Container>
       </ThemeProvider>

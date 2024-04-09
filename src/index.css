@@ -8,4 +8,21 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+::-webkit-scrollbar {
+  width: 15px;
+}
 
+/* Track of the scrollbar */
+::-webkit-scrollbar-track {
+  background: #444;
+}
+
+/* Handle of the scrollbar */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #eee4;
+}

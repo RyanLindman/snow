@@ -1,4 +1,4 @@
-
+import Footer from '../../Footer'
 import Navbar from '../../Navbar'
 import { navOpts } from '../../interfaces/interfaces'
 
@@ -7,13 +7,18 @@ import Content from './Content'
 
 const OurServices = () => {
   return (
-   <>
-   <Navbar children={undefined} items={navOpts} />
-   <Content />
-   
-
-   
-   </>
+    <>
+      <div
+        style={{
+          background:
+            'linear-gradient(90deg, rgba(57,92,130,1) 0%, rgba(15,54,97,1) 100%)',
+        }}
+      >
+        <Navbar children={undefined} items={navOpts} />
+        <Content />
+        <Footer />
+      </div>
+    </>
   )
 }
 

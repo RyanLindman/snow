@@ -3,6 +3,7 @@ import {
   Container,
   Grid,
   Paper,
+  Slide,
   ThemeProvider,
   Typography,
   createTheme,
@@ -13,10 +14,14 @@ import InstagramIcon from '@mui/icons-material/Instagram'
 import FacebookIcon from '@mui/icons-material/Facebook'
 import MailOutlineIcon from '@mui/icons-material/MailOutline'
 import PhoneIcon from '@mui/icons-material/Phone'
+import { useState } from 'react'
+import Footer from '../../Footer'
 
 type HomeContentProps = {}
 
 const HomeContent: React.FC<HomeContentProps> = () => {
+  const [checked, setChecked] = useState(true)
+
   const theme = createTheme({
     components: {
       MuiPaper: {
@@ -58,76 +63,50 @@ const HomeContent: React.FC<HomeContentProps> = () => {
           }}
         >
           <Grid container padding={10}>
-            <Grid item xs={6}>
-              <Paper
-                sx={{
-                  padding: 2,
-                  backgroundImage: 'url(src/assets/Snorojning-1200x936.jpg)',
-                  height: 340,
-                  width: 600,
-                }}
-                elevation={8}
-              />
-            </Grid>
-            <Grid item xs={6}>
-              <Paper elevation={9}>
-                <Typography variant="h4" fontWeight={700}>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Necessitatibus vero. <br />
-                  <br />
-                </Typography>
-                <Typography variant="h5">
-                  Eos aut rerum? Fuga a commodi cupiditate Voluptas ab officiis
-                  tempora iusto minima eligendi. Eum?
-                </Typography>
-                <br />
-                <Typography variant="h5">
-                  Eos aut rerum? Fuga a commodi cupiditate Voluptas ab officiis!
-                </Typography>
-              </Paper>
-            </Grid>
+            {checked && (
+              <Slide timeout={700} in={checked} direction="right">
+                <Grid item xs={6}>
+                  <Paper
+                    sx={{
+                      padding: 2,
+                      backgroundImage:
+                        'url(src/assets/Snorojning-1200x936.jpg)',
+                      height: 340,
+                      width: 600,
+                    }}
+                    elevation={8}
+                  />
+                </Grid>
+              </Slide>
+            )}
+            {checked && (
+              <Slide in={checked} direction="left">
+                <Grid item xs={6}>
+                  <Paper elevation={9}>
+                    <Typography variant="h4" fontWeight={700}>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Necessitatibus vero. <br />
+                      <br />
+                    </Typography>
+                    <Typography variant="h5">
+                      Eos aut rerum? Fuga a commodi cupiditate Voluptas ab
+                      officiis tempora iusto minima eligendi. Eum?
+                    </Typography>
+                    <br />
+                    <Typography variant="h5">
+                      Eos aut rerum? Fuga a commodi cupiditate Voluptas ab
+                      officiis!
+                    </Typography>
+                  </Paper>
+                </Grid>
+              </Slide>
+            )}
           </Grid>
           <hr />
           <Typography variant="h1" padding={10}>
             Vi hjälper privata kunder såväl som offentlig sektor
           </Typography>
-
-          <Box
-            sx={{
-              width: '100%',
-              height: '200px',
-              background: '#ccc2',
-              borderTopLeftRadius: '10px',
-              borderTopRightRadius: '10px',
-              display: 'flex',
-              justifyContent: 'center',
-              flexDirection: 'column',
-              alignItems: 'center',
-              gap: '30px',
-            }}
-          >
-            <Box>
-              <Breadcrumbs />
-            </Box>
-            <Box sx={{ display: 'flex', gap: '15px', color: '#ccc' }}>
-              <a
-                href="https://instagram.com"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <InstagramIcon />
-              </a>
-              <a href='https://facebook.com' target='_blank' rel='noopener noreferrer'>
-                <FacebookIcon />
-              </a>
-              <a>
-                <MailOutlineIcon />
-              </a>
-              <a>
-                <PhoneIcon />
-              </a>
-            </Box>
-          </Box>
+          <Footer />
         </Container>
       </ThemeProvider>
     </>

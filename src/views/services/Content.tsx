@@ -5,17 +5,18 @@ import {
   Typography,
   createTheme,
   Container,
+  Box,
+  Grow,
 } from '@mui/material'
 import './content.css'
+import { useState } from 'react'
 
 const Content = () => {
   const theme = createTheme({
     components: {
       MuiGrid: {
         styleOverrides: {
-          container: {
-            
-          },
+          container: {},
         },
       },
       MuiPaper: {
@@ -40,66 +41,74 @@ const Content = () => {
         },
       },
       MuiContainer: {
-        styleOverrides:{
-          disableGutters: {
-            background:
-              'linear-gradient(90deg, rgba(57,92,130,1) 0%, rgba(15,54,97,1) 100%)',
-          }
-        }
-      }
+        styleOverrides: {
+          disableGutters: {},
+        },
+      },
     },
   })
 
+  const [checked, setChecked] = useState(true)
+
   return (
     <>
-      <ThemeProvider theme={theme}>
-        <Container disableGutters maxWidth={false}>
-          <Typography textAlign={'start'} mt={10} variant="h2" color={'white'} padding={5}>
-            Vi utför sommar och vinterunderhåll <br /> inom Västra Götaland
-          </Typography>
-          <Grid
-            container
-            spacing={2}
-            sx={{
-              height: 'auto',
-              justifyContent: 'center',
-              flexDirection: 'row',
-              alignItems: 'center',
-            }}
-          >
-            <Grid item xs={6}>
-              <Paper elevation={3}>
-                <Typography variant="h5">Snöröj</Typography>
-              </Paper>
-            </Grid>
-            <Grid item xs={6}>
-              <Paper elevation={3}>
-                <Typography variant="h5">Grus & soppning</Typography>
-              </Paper>
-            </Grid>
-            <Grid item xs={6}>
-              <Paper elevation={3}>
-                <Typography variant="h5">Tvätt</Typography>
-              </Paper>
-            </Grid>
-            <Grid item xs={6}>
-              <Paper elevation={3}>
-                <Typography variant="h5">Båt & Marin</Typography>
-              </Paper>
-            </Grid>
-            <Grid item xs={6}>
-              {/* <Paper elevation={3}>
-                <Typography variant="h5">Snöröj</Typography>
-              </Paper>
-            </Grid>
-            <Grid item xs={6}>
-              <Paper elevation={3}>
-                <Typography variant="h5">Snöröj</Typography>
-              </Paper> */}
-            </Grid>
-          </Grid>
-        </Container>
-      </ThemeProvider>
+      <Box mt={10}>
+        <Box>
+          {checked && (
+            <Grow timeout={'auto'} in={checked}>
+              <div>
+                {/* Render content if checked is true */}
+                <ThemeProvider theme={theme}>
+                  <Container disableGutters maxWidth={false}>
+                    <Typography
+                      textAlign={'start'}
+                      mt={10}
+                      variant="h2"
+                      color={'white'}
+                      padding={5}
+                    >
+                      Vi utför sommar och vinterunderhåll <br /> inom Västra
+                      Götaland
+                    </Typography>
+                    <Grid
+                      container
+                      spacing={2}
+                      sx={{
+                        height: 'auto',
+                        justifyContent: 'center',
+                        flexDirection: 'row',
+                        alignItems: 'center',
+                      }}
+                    >
+                      <Grid item xs={6}>
+                        <Paper elevation={3}>
+                          <Typography variant="h5">Snöröjning</Typography>
+                        </Paper>
+                      </Grid>
+                      <Grid item xs={6}>
+                        <Paper elevation={3}>
+                          <Typography variant="h5">Grus & städning</Typography>
+                        </Paper>
+                      </Grid>
+                      <Grid item xs={6}>
+                        <Paper elevation={3}>
+                          <Typography variant="h5">Tvätt</Typography>
+                        </Paper>
+                      </Grid>
+                      <Grid item xs={6}>
+                        <Paper elevation={3}>
+                          <Typography variant="h5">Båt & Marin</Typography>
+                        </Paper>
+                      </Grid>
+                      {/* You may add more Grid items here if needed */}
+                    </Grid>
+                  </Container>
+                </ThemeProvider>
+              </div>
+            </Grow>
+          )}
+        </Box>
+      </Box>
     </>
   )
 }

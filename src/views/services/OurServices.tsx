@@ -16,7 +16,7 @@ const OurServices = () => {
       >
         <Navbar children={undefined} items={navOpts} />
         <Content />
-        <Footer />
+        <Footer /> 
       </div>
     </>
   )

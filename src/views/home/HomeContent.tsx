@@ -9,11 +9,6 @@ import {
   createTheme,
 } from '@mui/material'
 import './homeContent.css'
-import Breadcrumbs from '../../Breadcrumbs'
-import InstagramIcon from '@mui/icons-material/Instagram'
-import FacebookIcon from '@mui/icons-material/Facebook'
-import MailOutlineIcon from '@mui/icons-material/MailOutline'
-import PhoneIcon from '@mui/icons-material/Phone'
 import { useState } from 'react'
 import Footer from '../../Footer'
 

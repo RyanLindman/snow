@@ -10,6 +10,7 @@ import {
 } from '@mui/material'
 import './content.css'
 import { useState } from 'react'
+import Map from '../../Map'
 
 const Content = () => {
   const theme = createTheme({
@@ -36,7 +37,7 @@ const Content = () => {
           h5: {
             textTransform: 'uppercase',
             fontWeight: 700,
-            fontFamily: 'Verdana, sans serif',
+            fontFamily: 'Montserrat',
           },
         },
       },
@@ -59,17 +60,21 @@ const Content = () => {
               <div>
                 {/* Render content if checked is true */}
                 <ThemeProvider theme={theme}>
-                  <Container disableGutters maxWidth={false}>
-                    <Typography
-                      textAlign={'start'}
-                      mt={10}
-                      variant="h2"
-                      color={'white'}
-                      padding={5}
-                    >
-                      Vi utför sommar och vinterunderhåll <br /> inom Västra
-                      Götaland
-                    </Typography>
+                  <Container maxWidth={false}>
+                    <Box display={'flex'} pt={2} pb={2}>
+                      <Typography
+                        textAlign={'start'}
+                        mt={10}
+                        variant="h2"
+                        color={'white'}
+                        padding={5}
+                        fontFamily={'Montserrat'}
+                      >
+                        Vi utför sommar och vinterunderhåll <br /> inom Västra
+                        Götaland
+                      </Typography>
+                      <Map />
+                    </Box>
                     <Grid
                       container
                       spacing={2}
@@ -100,7 +105,6 @@ const Content = () => {
                           <Typography variant="h5">Båt & Marin</Typography>
                         </Paper>
                       </Grid>
-                      {/* You may add more Grid items here if needed */}
                     </Grid>
                   </Container>
                 </ThemeProvider>

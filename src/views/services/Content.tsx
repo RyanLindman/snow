@@ -1,13 +1,12 @@
 import {
-  Box,
+  Paper,
   Grid,
   ThemeProvider,
   Typography,
   createTheme,
+  Container,
 } from '@mui/material'
-import React from 'react'
 import './content.css'
-import { Height } from '@mui/icons-material'
 
 const Content = () => {
   const theme = createTheme({
@@ -15,53 +14,91 @@ const Content = () => {
       MuiGrid: {
         styleOverrides: {
           container: {
-            background:
-              'linear-gradient(90deg, rgba(57,92,130,1) 0%, rgba(15,54,97,1) 100%)',
+            
           },
         },
       },
+      MuiPaper: {
+        styleOverrides: {
+          elevation3: {
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            borderRadius: 0,
+            padding: 20,
+            border: '1px solid black',
+          },
+        },
+      },
+      MuiTypography: {
+        styleOverrides: {
+          h5: {
+            textTransform: 'uppercase',
+            fontWeight: 700,
+            fontFamily: 'Verdana, sans serif',
+          },
+        },
+      },
+      MuiContainer: {
+        styleOverrides:{
+          disableGutters: {
+            background:
+              'linear-gradient(90deg, rgba(57,92,130,1) 0%, rgba(15,54,97,1) 100%)',
+          }
+        }
+      }
     },
   })
 
   return (
     <>
       <ThemeProvider theme={theme}>
-        <Grid bgcolor={'#ccc2'} height={'150px'}>
-        </Grid>
-
-
-        <Grid container sx={{ height: 'auto', justifyContent: 'center', flexDirection:'column', alignItems: 'center' }}>
-          <Grid item xs={2}>
-            <Box>
-              <Typography variant="h5">Snöröj</Typography>
-            </Box>
+        <Container disableGutters maxWidth={false}>
+          <Typography textAlign={'start'} mt={10} variant="h2" color={'white'} padding={5}>
+            Vi utför sommar och vinterunderhåll <br /> inom Västra Götaland
+          </Typography>
+          <Grid
+            container
+            spacing={2}
+            sx={{
+              height: 'auto',
+              justifyContent: 'center',
+              flexDirection: 'row',
+              alignItems: 'center',
+            }}
+          >
+            <Grid item xs={6}>
+              <Paper elevation={3}>
+                <Typography variant="h5">Snöröj</Typography>
+              </Paper>
+            </Grid>
+            <Grid item xs={6}>
+              <Paper elevation={3}>
+                <Typography variant="h5">Grus & soppning</Typography>
+              </Paper>
+            </Grid>
+            <Grid item xs={6}>
+              <Paper elevation={3}>
+                <Typography variant="h5">Tvätt</Typography>
+              </Paper>
+            </Grid>
+            <Grid item xs={6}>
+              <Paper elevation={3}>
+                <Typography variant="h5">Båt & Marin</Typography>
+              </Paper>
+            </Grid>
+            <Grid item xs={6}>
+              {/* <Paper elevation={3}>
+                <Typography variant="h5">Snöröj</Typography>
+              </Paper>
+            </Grid>
+            <Grid item xs={6}>
+              <Paper elevation={3}>
+                <Typography variant="h5">Snöröj</Typography>
+              </Paper> */}
+            </Grid>
           </Grid>
-          <Grid item xs={2}>
-            <Box>
-              <Typography variant="h5">Snöröj</Typography>
-            </Box>
-          </Grid>
-          <Grid item xs={2}>
-            <Box>
-              <Typography variant="h5">Snöröj</Typography>
-            </Box>
-          </Grid>
-          <Grid item xs={2}>
-            <Box>
-              <Typography variant="h5">Snöröj</Typography>
-            </Box>
-          </Grid>
-          <Grid item xs={2}>
-            <Box>
-              <Typography variant="h5">Snöröj</Typography>
-            </Box>
-          </Grid>
-          <Grid item xs={2}>
-            <Box>
-              <Typography variant="h5">Snöröj</Typography>
-            </Box>
-          </Grid>
-        </Grid>
+        </Container>
       </ThemeProvider>
     </>
   )

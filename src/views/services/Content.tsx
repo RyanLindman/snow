@@ -17,7 +17,7 @@ const Content = () => {
     components: {
       MuiGrid: {
         styleOverrides: {
-          container: {},
+          
         },
       },
       MuiPaper: {
@@ -25,11 +25,11 @@ const Content = () => {
           elevation3: {
             display: 'flex',
             justifyContent: 'center',
-            alignItems: 'center',
-            borderRadius: 0,
+            alignItems: 'center',          
             padding: 20,
             border: '1px solid black',
           },
+          
         },
       },
       MuiTypography: {

@@ -1,5 +1,5 @@
 
-SPA demo for a companys website.
+SPA demo for a company website.
 Static for starter. 
 
 

@@ -1,6 +1,6 @@
 
-My SPA demo for a companys website.
-Static for now. 
+SPA demo for a companys website.
+Static for starter. 
 
 
 TODO: finish for deployment to Cloudflare, serverless

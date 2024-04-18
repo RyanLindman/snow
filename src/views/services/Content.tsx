@@ -7,7 +7,6 @@ import {
    Container,
    Box,
    Grow,
-   Card,
 } from '@mui/material'
 import './content.css'
 import { useState } from 'react'
@@ -62,23 +61,33 @@ const Content = () => {
                         {/* Render content if checked is true */}
                         <ThemeProvider theme={theme}>
                            <Container maxWidth={false}>
-                              <Box display={'flex'} pt={2} pb={2}>
+                              <Box
+                                 display={'flex'}
+                                 pt={2}
+                                 pb={2}
+                                 
+                                 justifyContent={'center'}
+                              >
                                  <Typography
                                     textAlign={'start'}
-                                    mt={10}
+                                    mt={5}
                                     variant="h2"
                                     color={'white'}
-                                    padding={5}
+                                    padding={'40px 0px'}
                                     fontFamily={'Montserrat'}
                                  >
-                                    Vi utför sommar och vinterunderhåll <br />{' '}
-                                    inom Västra Götaland
+                                    Vi utför{' '}
+                                    <span id="bold-italic">sommar-</span> och{' '}
+                                    <span id="bold-italic">
+                                       vinterunderhåll
+                                    </span>{' '}
+                                    <br /> inom Västra Götaland
                                  </Typography>
                                  <Map />
                               </Box>
                               <Grid
                                  container
-                                 spacing={3}
+                                 spacing={4}
                                  sx={{
                                     height: 'auto',
                                     justifyContent: 'center',

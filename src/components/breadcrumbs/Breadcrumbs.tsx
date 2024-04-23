@@ -1,7 +1,6 @@
-import { navOpts } from './interfaces/interfaces'
+import { navOpts } from '../../interfaces/interfaces'
 
 const Breadcrumbs = () => {
-  
    return (
       <div>
          <nav>

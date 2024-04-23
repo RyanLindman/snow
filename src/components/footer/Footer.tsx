@@ -1,6 +1,6 @@
 import { Box, Grid } from '@mui/material'
 import React from 'react'
-import Breadcrumbs from './Breadcrumbs'
+import Breadcrumbs from '../breadcrumbs/Breadcrumbs'
 import InstagramIcon from '@mui/icons-material/Instagram'
 import FacebookIcon from '@mui/icons-material/Facebook'
 import MailOutlineIcon from '@mui/icons-material/MailOutline'

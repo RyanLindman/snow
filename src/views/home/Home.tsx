@@ -1,7 +1,7 @@
 import './Home.css'
 import Header from '../../components/header/Header'
 import HomeContent from './HomeContent'
-import Navbar from '../../Navbar'
+import Navbar from '../../components/navbar/Navbar'
 import { navOpts } from '../../interfaces/interfaces'
 import Footer from '../../components/footer/Footer'
 

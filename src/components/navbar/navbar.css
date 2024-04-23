@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+
+#logo {
+   height: 120px;
+   margin-left: 100px;
+   transition: all ease 0.2s;
+}
+
+#logo:hover {
+   filter: drop-shadow(0 0 2em #f1f1f1aa);
+}
+
+.nav-options {
+   margin-right: 100px;
+   cursor: pointer;
+   display: flex;
+   width: 800px;
+   font-size: 20px;
+   gap: 70px;
+}
+
+.active-link {
+   color: yellow;
+}
+
+.inactive-link {
+   color: black;
+}
+
+.btn {
+   padding: 10px 20px; /* Adjust the padding to control the button size */
+   background-color: rgba(92, 155, 204, 0.452);
+   border: none; /* Remove default border */
+   border-radius: 5px; /* Rounded corners */
+   text-align: center; /* Ensure text is centered */
+   text-decoration: none; /* Remove underline from links */
+   font-size: 16px; /* Text size */
+   transition: background-color 0.4s, transform 0.3s; /* Smooth transitions for hover effects */
+   font-family: 'Nunito Sans', sans-serif; /* Consistent font */
+   position: relative; /* Needed for the absolute positioning of the pseudo-element */
+   overflow: hidden; /* Ensures the pseudo-element does not extend outside the button */
+   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Add a small shadow on hover */
+}
+
+.btn:hover,
+.btn:focus {
+   background-color: rgba(252, 252, 252, 0.3); /* Full opacity on hover/focus */
+   transform: translateY(-2px); /* Slight lift effect */
+   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4); /* Add a small shadow on hover */
+}
+
+.btn:active {
+   background-color: '#eee'; /* Full opacity on click */
+   transform: translateY(1px); /* "Press down" effect */
+   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4); /* Add a small shadow on hover */
+}
+
+@keyframes clickWave {
+   0% {
+      width: 0;
+      height: 0;
+      opacity: 0.5;
+      position: relative;
+   }
+   100% {
+      width: 200%;
+      height: 500%;
+      opacity: 0;
+      position: relative;
+   }
+}
+
+.btn::after {
+   content: '';
+   background: rgba(255, 255, 255, 0.5);
+   display: block;
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   width: 20px;
+   height: 20px;
+   border-radius: 50%;
+   transform: translate(-50%, -50%) scale(0);
+   transform-origin: center center;
+   transition: transform 0.5s, opacity 0.3s;
+   opacity: 0;
+}

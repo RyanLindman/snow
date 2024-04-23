@@ -5,6 +5,7 @@ import './index.css'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import OurServices from './views/services/OurServices.tsx'
 import ScrollTop from './utility/scrollTop.tsx'
+import ContactContent from './views/contact/ContactContent.tsx'
 
 const router = createBrowserRouter([
    {
@@ -22,6 +23,16 @@ const router = createBrowserRouter([
          <>
             <ScrollTop />
             <OurServices />
+         </>
+      ),
+   },
+
+   {
+      path: '/kontakt',
+      element: (
+         <>
+            <ScrollTop />
+            <ContactContent />
          </>
       ),
    },

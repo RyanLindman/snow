@@ -1,4 +1,3 @@
-import { ReadMore } from '@mui/icons-material'
 import { Box, Card, CardContent, CardMedia, Typography } from '@mui/material'
 import React from 'react'
 
@@ -46,7 +45,6 @@ const MUICard: React.FC<CardProps> = ({
             </CardContent>
             <Box sx={{ display: 'flex', alignItems: 'center', pl: 1, p: 2 }}>
                <Typography variant="h6">{body}</Typography>
-             
             </Box>
          </Box>
          <CardMedia

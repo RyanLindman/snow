@@ -12,8 +12,6 @@ import './content.css'
 import { useState } from 'react'
 import Map from '../../Map'
 import SnowCard from './SnowCard'
-import MarineCard from './MarineCard'
-import GravelCard from './GravelCard'
 import MUICard from './Card'
 
 const Content = () => {
@@ -99,7 +97,14 @@ const Content = () => {
                               <Grid container spacing={4}>
                                  <Grid item xs={6}>
                                     <Paper elevation={3}>
-                                       <SnowCard />
+                                       <MUICard
+                                          imgPath="src\assets\Snorojning-1200x936.jpg"
+                                          alt="wash"
+                                          title="snöröjning"
+                                          body={cardBody}
+                                          display="flex"
+                                          elevation={0}
+                                       />
                                     </Paper>
                                  </Grid>
                                  <Grid item xs={6}>

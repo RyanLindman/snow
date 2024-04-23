@@ -14,12 +14,17 @@ import Map from '../../Map'
 import SnowCard from './SnowCard'
 import MarineCard from './MarineCard'
 import GravelCard from './GravelCard'
+import MUICard from './Card'
 
 const Content = () => {
+   const [checked, setChecked] = useState(true)
+
    const theme = createTheme({
       components: {
          MuiGrid: {
-            styleOverrides: {},
+            styleOverrides: {
+               'spacing-xs-4': {},
+            },
          },
          MuiPaper: {
             styleOverrides: {
@@ -29,6 +34,8 @@ const Content = () => {
                   alignItems: 'center',
                   padding: 20,
                   marginTop: 10,
+                  background:
+                     'linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(215,222,255,1) 95%)',
                },
             },
          },
@@ -49,8 +56,13 @@ const Content = () => {
       },
    })
 
-   const [checked, setChecked] = useState(true)
-
+   const cardBody = (
+      <Typography variant="h6">
+         Lorem ipsum dolor sit amet consectetur adipisicing elit. <br /> Alias
+         iste itaque pariatur repudiandae earum cum <strong>maxime</strong>{' '}
+         tenetur?
+      </Typography>
+   )
    return (
       <>
          <Box mt={10}>
@@ -65,7 +77,6 @@ const Content = () => {
                                  display={'flex'}
                                  pt={2}
                                  pb={2}
-                                 
                                  justifyContent={'center'}
                               >
                                  <Typography
@@ -85,48 +96,46 @@ const Content = () => {
                                  </Typography>
                                  <Map />
                               </Box>
-                              <Grid
-                                 container
-                                 spacing={4}
-                                 sx={{
-                                    height: 'auto',
-                                    justifyContent: 'center',
-                                    flexDirection: 'row',
-                                    alignItems: 'center',
-                                 }}
-                              >
+                              <Grid container spacing={4}>
                                  <Grid item xs={6}>
-                                    <Paper
-                                       elevation={3}
-                                       sx={{
-                                          background:
-                                             'linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(215,222,255,1) 95%)',
-                                       }}
-                                    >
+                                    <Paper elevation={3}>
                                        <SnowCard />
                                     </Paper>
                                  </Grid>
                                  <Grid item xs={6}>
-                                    <Paper
-                                       elevation={3}
-                                       sx={{
-                                          background:
-                                             'linear-gradient(90deg, rgba(215,222,255,1) 5%, rgba(255,255,255,1) 100%)',
-                                       }}
-                                    >
-                                       <GravelCard />
+                                    <Paper elevation={3}>
+                                       <MUICard
+                                          imgPath="src\assets\Snorojning-1200x936.jpg"
+                                          alt="wash"
+                                          title="Grus & städning"
+                                          body={cardBody}
+                                          display="flex"
+                                          elevation={0}
+                                       />
                                     </Paper>
                                  </Grid>
                                  <Grid item xs={6}>
                                     <Paper elevation={3}>
-                                       <Typography variant="h5">
-                                          Tvätt
-                                       </Typography>
+                                       <MUICard
+                                          imgPath="src\assets\Snorojning-1200x936.jpg"
+                                          alt="wash"
+                                          title="Tvätt"
+                                          body={cardBody}
+                                          display="flex"
+                                          elevation={0}
+                                       />
                                     </Paper>
                                  </Grid>
                                  <Grid item xs={6}>
                                     <Paper elevation={3}>
-                                       <MarineCard />
+                                       <MUICard
+                                          imgPath="src\assets\marine.jpeg"
+                                          alt="wash"
+                                          title="Båt & marin"
+                                          body={cardBody}
+                                          display="flex"
+                                          elevation={0}
+                                       />
                                     </Paper>
                                  </Grid>
                               </Grid>

@@ -2,10 +2,10 @@ import { Box, Card, CardContent, CardMedia, Typography } from '@mui/material'
 import React from 'react'
 
 type CardProps = {
-   imgPath?: string
-   alt?: string
-   body?: React.JSX.Element
-   title?: string
+   imgPath: string
+   alt: string
+   body: React.JSX.Element
+   title: string
    undertitle?: string
    bgColor?: string
    display?: string

@@ -11,7 +11,6 @@ import {
 import './content.css'
 import { useState } from 'react'
 import Map from '../../Map'
-import SnowCard from './SnowCard'
 import MUICard from './Card'
 
 const Content = () => {
